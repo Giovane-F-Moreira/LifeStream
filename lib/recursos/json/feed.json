@@ -1,0 +1,52 @@
+{
+    "bolsas": [
+        {
+            "_id": 1,
+            "tipo": "A+",
+            "quantidade": 18,
+            "doadores": 250
+        },
+        {
+            "_id": 2,
+            "tipo": "A-",
+            "quantidade": 23,
+            "doadores": 320
+        },
+        {
+            "_id": 3,
+            "tipo": "B+",
+            "quantidade": 18,
+            "doadores": 99
+        },
+        {
+            "_id": 4,
+            "tipo": "B-",
+            "quantidade": 11,
+            "doadores": 30
+        },
+        {
+            "_id": 5,
+            "tipo": "AB+",
+            "quantidade": 9,
+            "doadores": 70
+        },
+        {
+            "_id": 6,
+            "tipo": "AB-",
+            "quantidade": 19,
+            "doadores": 95
+        },
+        {
+            "_id": 7,
+            "tipo": "O+",
+            "quantidade": 14,
+            "doadores": 112
+        },
+        {
+            "_id": 8,
+            "tipo": "O-",
+            "quantidade": 17,
+            "doadores": 100
+        }
+    ]
+}
