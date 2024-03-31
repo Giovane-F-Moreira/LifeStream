@@ -1,0 +1,46 @@
+{
+    "hospitais": [
+        {
+            "_id": 1,
+            "nome": "UPA",
+            "telefone": "(77)3424-5151",
+            "endereco": "Rua 1",
+            "foto": "lib/recursos/imagens/UPA.png"
+        },
+        {
+            "_id": 2,
+            "nome": "HGVC",
+            "telefone": "(77)3424-5251",
+            "endereco": "Rua 2",
+            "foto": "lib/recursos/imagens/HGVC.png"  
+        },
+        {
+            "_id": 3,
+            "nome": "ESAÚ",
+            "telefone": "(77)3424-5351",
+            "endereco": "Rua 3",
+            "foto": "lib/recursos/imagens/HMEM.png"
+        },
+        {
+            "_id": 4,
+            "nome": "SÃO VICENTE",
+            "telefone": "(77)3424-5451",
+            "endereco": "Rua 4",
+            "foto": "lib/recursos/imagens/HSV.png"
+        },
+        {
+            "_id": 5,
+            "nome": "UNIMEC",
+            "telefone": "(77)3424-5451",
+            "endereco": "Rua 5",
+            "foto": "lib/recursos/imagens/UPA.png"
+        },
+        {
+            "_id": 6,
+            "nome": "SÃO GERALDO",
+            "telefone": "(77)3424-5451",
+            "endereco": "Rua 6",
+            "foto": "lib/recursos/imagens/UPA.png"
+        }
+    ]
+}

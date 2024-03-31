@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.6
   flat_list: ^0.1.14
+  provider: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -26,4 +27,11 @@ flutter:
   uses-material-design: true
 
   assets:
-  - lib/recursos/json/feed.json
+  - lib/recursos/json/hospitais.json
+  - lib/recursos/imagens/produto.jpeg
+  - lib/recursos/imagens/avatar.png
+  - lib/recursos/imagens/logo.png
+  - lib/recursos/imagens/UPA.png
+  - lib/recursos/imagens/HGVC.png
+  - lib/recursos/imagens/HSV.png
+  - lib/recursos/imagens/HMEM.png

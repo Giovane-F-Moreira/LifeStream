@@ -1,47 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:lifestream/telas/bolsas.dart';
+import 'package:flutter/services.dart';
+import 'package:lifestream/estado.dart';
+import 'package:lifestream/telas/detalhes.dart';
+import 'package:lifestream/telas/hospitais.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Life Stream',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Life Stream'),
-    );
+    return ChangeNotifierProvider(
+        create: (_) => EstadoApp(),
+        child: MaterialApp(
+          title: "Life Stream",
+          theme: ThemeData(
+              colorScheme: const ColorScheme.light(), useMaterial3: true),
+          home: const Tela(),
+        ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+class Tela extends StatefulWidget {
+  const Tela({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Tela> createState() => _TelaState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _TelaState extends State<Tela> {
+  void _exibirComoRetrato() {
+    SystemChrome.setPreferredOrientations(
+        [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+}
+
   @override
   Widget build(BuildContext context) {
+    _exibirComoRetrato();
+
+    estadoApp = context.watch<EstadoApp>();
+
+    Widget tela = const SizedBox.shrink();
+    if (estadoApp.situacao == Situacao.mostrandoHospitais) {
+      tela = const Hospitais();
+    } else if (estadoApp.situacao == Situacao.mostrandoDetalhes) {
+      tela = const Detalhes();
+    }
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Bolsas(),
-      ),
-    );
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70.0), // here the desired height
+          child: AppBar(
+            title: Center(
+              child: Image.asset("lib/recursos/imagens/logo.png", width: 220)
+            ),
+            backgroundColor: const Color.fromRGBO(78,192,219,100)
+          )
+        ),
+      body: Center(
+      child: tela));
+
   }
 }
